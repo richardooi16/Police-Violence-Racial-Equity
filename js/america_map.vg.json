@@ -4,33 +4,34 @@
   "height": 500,
   "title": "Death Arrests in the United States 2013-2019",
   "data": {
-    "url": "https://raw.githubusercontent.com/richardooi16/Police-Violence-Racial-Equity/main/data/deaths_arrests.csv"
+    "url": "https://raw.githubusercontent.com/richardooi16/Police-Violence-Racial-Equity/main/js/states-10m.json",
+    "format": {
+          "type": "topojson",
+          "feature": "states"
+        }
   },
-  "transform": [
-    {
-      "lookup": "State",
+  "transform": [{
+      "lookup": "properties.name",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/richardooi16/Police-Violence-Racial-Equity/main/js/states-10m.json",
-          "format": {
-            "type": "topojson",
-            "feature": "states"
-          }
+          "url": "https://raw.githubusercontent.com/richardooi16/Police-Violence-Racial-Equity/main/data/deaths_arrests.csv"
         },
-        "key": "State"
-      },
-      "as": "geo"
+        "key": "State",
+        "fields": ["Avg Annual Police Homicide Rate for Black People"]
+      }
     }
   ],
   "projection": {
     "type": "albersUsa"
   },
-  "mark": "geoshape",
+  "mark": {
+    "type": "geoshape"
+    },
   "encoding": {
-    "shape": {"field": "geo", "type": "geojson"},
     "color": {
-      "field": "Total",
+      "field": "Avg Annual Police Homicide Rate for Black People",
       "type": "quantitative"
     }
+    
   }
 }
