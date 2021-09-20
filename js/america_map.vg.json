@@ -4,26 +4,32 @@
   "height": 500,
   "title": "Death Arrests in the United States 2013-2019",
   "data": {
-    "url": "https://raw.githubusercontent.com/richardooi16/Police-Violence-Racial-Equity/main/js/america.geo.json",
-    "format": {"type": "topojson", "feature": "america.geo"}
+    "url": "https://raw.githubusercontent.com/richardooi16/Police-Violence-Racial-Equity/main/data/deaths_arrests.csv"
   },
-  "transform": [{
-    "lookup": "id",
-    "from": {
-      "data": {
-        "url": "https://raw.githubusercontent.com/richardooi16/Police-Violence-Racial-Equity/main/data/deaths_arrests.csv"
+  "transform": [
+    {
+      "lookup": "State",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/richardooi16/Police-Violence-Racial-Equity/main/js/states-10m.json",
+          "format": {
+            "type": "topojson",
+            "feature": "states"
+          }
+        },
+        "key": "State"
       },
-      "key": "id",
-      "fields": ["Black-White Dissimilarity Index (2010)"]
+      "as": "geo"
     }
-  }],
+  ],
   "projection": {
     "type": "albersUsa"
   },
   "mark": "geoshape",
   "encoding": {
+    "shape": {"field": "geo", "type": "geojson"},
     "color": {
-      "field": "Black-White Dissimilarity Index (2010)",
+      "field": "Total",
       "type": "quantitative"
     }
   }
