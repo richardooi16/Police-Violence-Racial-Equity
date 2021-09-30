@@ -11,25 +11,54 @@
     }],
     "groupby": ["State"]
   }],
-  "mark": "bar",
-  "encoding": {
-    "x": {
-      "field": "State",
-      "title":null,
-      "type": "ordinal",
-      "axis": {"grid": false},
-      "sort":"-y"
-    },
-    "y": {
-      "field": "Total average",
-      "title":null,
-      "type": "quantitative",
-      "axis": {"grid": false}
-    },
-    "color": {
-      "condition": {"test": "datum['Total average'] >20", "value": "red"},
-      "value": "black"
-    }
 
-  }
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "tooltip":true
+      },
+      "encoding": {
+        "x": {
+          "field": "State",
+          "title":null,
+          "type": "ordinal",
+          "axis": {"grid": false},
+          "sort":"-y"
+        },
+        "y": {
+          "field": "Total average",
+          "title":null,
+          "type": "quantitative",
+          "axis": {"grid": false}
+        },
+        "color": {
+          "condition": {"test": "datum['Total average'] >20", "value": "red"},
+          "value": "black"
+        }
+      }
+    },
+    {
+      "mark":{
+        "type": "text",
+        "fontSize": 8
+      },
+      "encoding": {
+        "x": {
+          "field": "State",
+          "title":null,
+          "type": "ordinal",
+          "axis": {"grid": false},
+          "sort":"-y"
+        },
+        "y": {
+          "field": "Total average",
+          "title":null,
+          "type": "quantitative",
+          "axis": {"grid": false}
+        },
+        "text": {"field": "Total average", "type": "quantitative"}
+      }
+    }
+  ]
 }
