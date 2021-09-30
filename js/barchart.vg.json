@@ -14,6 +14,12 @@
 
   "layer": [
     {
+      "selection": {
+        "bar_highlight": {
+          "type": "multi",
+          "fields": ["State"]
+        }
+      },
       "mark": {
         "type": "bar",
         "tooltip":true
@@ -35,6 +41,10 @@
         "color": {
           "condition": {"test": "datum['Total average'] >20", "value": "red"},
           "value": "black"
+        },
+        "opacity": {
+          "condition": {"selection": "bar_highlight", "value": 1.0},
+          "value": 0.2
         }
       }
     },
