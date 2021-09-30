@@ -1,0 +1,35 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": { "url": "https://raw.githubusercontent.com/richardooi16/Police-Violence-Racial-Equity/main/data/deaths_arrests.csv"},
+  "title": "Avg Annual Police Homicide Rate for Black People",
+  "width": {"step": 12},
+  "transform": [{
+    "aggregate": [{
+      "op": "average",
+      "field": "Avg Annual Police Homicide Rate for Black People",
+      "as": "Total average"
+    }],
+    "groupby": ["State"]
+  }],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "State",
+      "title":null,
+      "type": "ordinal",
+      "axis": {"grid": false},
+      "sort":"-y"
+    },
+    "y": {
+      "field": "Total average",
+      "title":null,
+      "type": "quantitative",
+      "axis": {"grid": false}
+    },
+    "color": {
+      "condition": {"test": "datum['Total average'] >20", "value": "red"},
+      "value": "black"
+    }
+
+  }
+}

@@ -15,13 +15,22 @@
   
 <div id="america_map"></div>
 
+<div id="barchart"></div>
+
 <script type="text/javascript">
 
   var spec2 = "js/america_map.vg.json";
   vegaEmbed('#america_map', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
+
+  var spec1 = "js/barchart.vg.json";
+  vegaEmbed('#barchart', spec1).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
 </script>
+
+
 
 </body>
 </html>
