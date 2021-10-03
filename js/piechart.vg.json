@@ -1,0 +1,53 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": { "url": "https://raw.githubusercontent.com/richardooi16/Police-Violence-Racial-Equity/main/data/deaths_arrests.csv"},
+    "title": "Distribution of race of people killed",
+    "transform": [{
+        "aggregate": [
+        {
+            "op": "sum",
+            "field": "Black People Killed by Police (1/1/2013-12/31/2019)",
+            "as": "Black People"
+        },
+        {
+            "op": "sum",
+            "field": "Hispanic People Killed by Police (1/1/2013-12/31/2019)",
+            "as": "Hispanic People"
+        },
+        {
+            "op": "sum",
+            "field": "Native American People Killed by Police (1/1/2013-12/31/2019)",
+            "as": "Native American People"
+        },
+        {
+            "op": "sum",
+            "field": "Asian People Killed by Police (1/1/2013-12/31/2019)",
+            "as": "Asian People"
+        },
+        {
+            "op": "sum",
+            "field": "Pacific Islanders Killed by Police (1/1/2013-12/31/2019)",
+            "as": "Pacific Islanders"
+        },
+        {
+            "op": "sum",
+            "field": "White People Killed by Police (1/1/2013-12/31/2019)",
+            "as": "White People"
+        },
+        {
+            "op": "sum",
+            "field": "Unknown Race People Killed by Police (1/1/2013-12/31/2019)",
+            "as": "Unknown"
+        }
+        ]
+    },
+    {"fold": ["Black People","Hispanic People","Native American People","Asian People","Pacific Islanders","White People","Unknown"]}
+    ],
+    "mark": "arc",
+    "encoding": {
+        "theta": {"field": "value", "type": "quantitative"},
+        "color": {"field": "key", "type": "nominal", "title":"Race"},
+        "order": {"field": "value", "type": "quantitative", "sort": "descending"}
+    }
+    
+}
