@@ -23,43 +23,54 @@
     Although not all of the states have high Black-White Disparity, having just a few states
     where the ratios are very high are a concern. Another thing to note is that most if not
     all countries have a non-negative Black-White Disparity, which means there exist some
-    inequality, even if it is very slight.
+    inequality, even if it is very slight amount.
   </p>
   <div id="america_map"></div>
 
-  <h2>Police Homicide</h2>
+  <h2>Annual Police Homicidal Cases</h2>
   <p>
-    In this chart below, we can see the average number of murders of black people commited
-    by the police. 
+    In these charts below, we can see the average number of murders commited
+    by the police annually. As we can see, the numbers in the Homicide Rate for Black
+    People have higher numbers on average compared to the numbers in the Homicide Rate
+    for White People. Something to note is that the numbers in states such as Nevada and
+    New Mexico have extremely high rates, reaching close to 30 average annual homicides.
   </p>
   <div id="barchart"></div>
   <div id="barchart2"></div>
 
-  <h2>This is the third section</h2>
-  <p>Similar to the previous section, but the colum partition is swapped. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+  <h2>Race Breakdown</h2>
+  <p>
+    Here we can see the distribution of race of the people killed by the police. Although
+    white people have the highest percentage, they also have the highest population in the
+    United States. Therefore, it is reasonable that the percentage being more skewed towards
+    white people. However, other races although have a lower population still have quite a 
+    high percentage. There are also alot of unknown races but it is usually expected for 
+    them to be non-white personnel.
+  </p>
   <div id="piechart"></div>
 
 <script type="text/javascript">
 
-  var spec2 = "js/america_map.vg.json";
-  vegaEmbed('#america_map', spec2).then(function(result) {
+  var spec1 = "js/america_map.vg.json";
+  vegaEmbed('#america_map', spec1).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  var spec1 = "js/barchart.vg.json";
-  vegaEmbed('#barchart', spec1).then(function(result) {
+  var spec2 = "js/barchart.vg.json";
+  vegaEmbed('#barchart', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  var spec3 = "js/piechart.vg.json";
-  vegaEmbed('#piechart', spec3).then(function(result) {
+  var spec3 = "js/barchart2.vg.json";
+  vegaEmbed('#barchart2', spec3).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  var spec4 = "js/barchart2.vg.json";
-  vegaEmbed('#barchart2', spec4).then(function(result) {
+  var spec4 = "js/piechart.vg.json";
+  vegaEmbed('#piechart', spec4).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
+
 </script>
 </script>
 

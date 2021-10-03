@@ -1,0 +1,75 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": { "url": "https://raw.githubusercontent.com/richardooi16/Police-Violence-Racial-Equity/main/data/deaths_arrests.csv"},
+    "title": "Avg Annual Police Homicide Rate for White People",
+    "width": {"step": 12},
+    "transform": [{
+      "aggregate": [{
+        "op": "average",
+        "field": "Avg Annual Police Homicide Rate for White People",
+        "as": "Total average"
+      }],
+      "groupby": ["State"]
+    }],
+  
+    "layer": [
+      {
+        "selection": {
+          "bar_highlight": {
+            "type": "multi",
+            "fields": ["State"]
+          }
+        },
+        "mark": {
+          "type": "bar",
+          "tooltip":true
+        },
+        "encoding": {
+          "x": {
+            "field": "State",
+            "title":null,
+            "type": "ordinal",
+            "axis": {"grid": false},
+            "sort":"-y"
+          },
+          "y": {
+            "field": "Total average",
+            "title":null,
+            "type": "quantitative",
+            "axis": {"grid": false},
+            "scale": { "domain":[0,30]}
+          },
+          "color": {
+            "condition": {"test": "datum['Total average'] >20", "value": "red"},
+            "value": "black"
+          },
+          "opacity": {
+            "condition": {"selection": "bar_highlight", "value": 1.0},
+            "value": 0.2
+          }
+        }
+      },
+      {
+        "mark":{
+          "type": "text",
+          "fontSize": 8
+        },
+        "encoding": {
+          "x": {
+            "field": "State",
+            "title":null,
+            "type": "ordinal",
+            "axis": {"grid": false},
+            "sort":"-y"
+          },
+          "y": {
+            "field": "Total average",
+            "title":null,
+            "type": "quantitative",
+            "axis": {"grid": false}
+          },
+          "text": {"field": "Total average", "type": "quantitative"}
+        }
+      }
+    ]
+  }
