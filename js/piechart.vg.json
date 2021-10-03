@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": { "url": "https://raw.githubusercontent.com/richardooi16/Police-Violence-Racial-Equity/main/data/deaths_arrests.csv"},
-    "title": "Distribution of race of people killed",
+    "title": "Distribution of Race of People Killed",
     "transform": [{
         "aggregate": [
         {

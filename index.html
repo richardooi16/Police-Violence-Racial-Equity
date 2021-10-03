@@ -10,14 +10,34 @@
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
   
+  <title>Police Brutality and Racial Equity</title>
+
 </head>
 <body>
+
+  <h1>Police Brutality and Racial Equity</h1>
+  <h4>A visualisation by Richard Ooi</h4>
   
-<div id="america_map"></div>
+  <h2>Black-White Disparity</h2>
+  <p>
+    Although not all of the states have high Black-White Disparity, having just a few states
+    where the ratios are very high are a concern. Another thing to note is that most if not
+    all countries have a non-negative Black-White Disparity, which means there exist some
+    inequality, even if it is very slight.
+  </p>
+  <div id="america_map"></div>
 
-<div id="barchart"></div>
+  <h2>Police Homicide</h2>
+  <p>
+    In this chart below, we can see the average number of murders of black people commited
+    by the police. 
+  </p>
+  <div id="barchart"></div>
+  <div id="barchart2"></div>
 
-<div id="piechart"></div>
+  <h2>This is the third section</h2>
+  <p>Similar to the previous section, but the colum partition is swapped. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+  <div id="piechart"></div>
 
 <script type="text/javascript">
 
@@ -33,6 +53,11 @@
 
   var spec3 = "js/piechart.vg.json";
   vegaEmbed('#piechart', spec3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var spec4 = "js/barchart2.vg.json";
+  vegaEmbed('#barchart2', spec4).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
