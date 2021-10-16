@@ -7,8 +7,18 @@
 	width: 800px;*/
 }
 
+html {
+	font-family: Verdana, sans-serif;
+}
+
 body {
     background-color: lightblue;
 	font-size: 18px;
 	text-align: center;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+hr.divider {
+	border: 2px solid black;
 }
